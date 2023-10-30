@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-feed
+  name: backend-feed
 spec:
   selector:
     matchLabels:
-      run: api-feed
+      run: backend-feed
   replicas: 2
   template:
     metadata:
       labels:
-        run: api-feed
+        run: backend-feed
     spec:
       containers:
-      - name: api-feed
+      - name: backend-feed
         image: hoangan0114/udagram-api-feed:v1
         env:
         - name: POSTGRES_USERNAME
@@ -82,12 +82,12 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    service: api-feed
-  name: api-feed
+    service: backend-feed
+  name: backend-feed
 spec:
   ports:
   - name: "8080"
     port: 8080
     targetPort: 8080
   selector:
-    run: api-feed        
+    run: backend-feed        
