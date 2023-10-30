@@ -33,7 +33,6 @@ jobs:
             docker tag udagram-reverseproxy hoangan0114/udagram-reverseproxy:v1
 
             echo "-------- All images succesfully built----------"
-            
             echo "-------- Login in to docker hub----------------"
             docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
             
