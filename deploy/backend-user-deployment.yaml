@@ -63,7 +63,7 @@ spec:
               name: env-config
               key: URL
         volumeMounts:
-        - name: anth-secret
+        - name: aws-secret
           mountPath: "/root/.aws/"
           readOnly: true
         ports:
@@ -74,9 +74,9 @@ spec:
           requests:
             cpu: "250m"
       volumes:
-      - name: anth-secret
+      - name: aws-secret
         secret:
-          secretName: anth-secret
+          secretName: aws-secret
 
 ---
 apiVersion: v1
